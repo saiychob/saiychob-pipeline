@@ -30,8 +30,8 @@ jobs:
         repository: ${{ env.REPOSITORY }}
         tag: ${{ env.GITREF }}
         fileName: ${{ env.ARTIFACT_NAME }}-${{ env.GITREF }}.tar.gz
-        token: ${{ secrets.WORKFLOW_TOKEN }}
-
+        token: ${{ secrets. }}
+WORKFLOW_TOKEN
     - name: Extract Artifact
       run : |
         mkdir -p ${{ env.ARTIFACT_NAME }}-${{ env.GITREF }}
