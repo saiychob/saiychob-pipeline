@@ -60,7 +60,7 @@ jobs:
       name: dev
       url: https://dev-saicyhob-web.azure101.ml/swagger/index.html
  
-     steps:
+    steps:
     - name: Download Artifact
       uses: actions/download-artifact@v3
       with:
