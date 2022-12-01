@@ -15,14 +15,13 @@ env:
   APP_RESOURCE_NAME: app-saiychob-az-usw3-sit-001
 
 jobs:
-
   deploy-app-service:
     name: Deploy
     runs-on: [ self-hosted, saiychob-sbx, vm-saiychobSelfHost-az-usw3-sbx-001 ]
     environment:
       name: sit
       url: https://sit-saiychob-web.azure101.ml/swagger/index.html
-
+    
     steps:
     - name: Download Artifact
       uses: robinraju/release-downloader@v1.3
@@ -30,8 +29,8 @@ jobs:
         repository: ${{ env.REPOSITORY }}
         tag: ${{ env.GITREF }}
         fileName: ${{ env.ARTIFACT_NAME }}-${{ env.GITREF }}.tar.gz
-        token: ${{ secrets. }}
-WORKFLOW_TOKEN
+        token: ${{ secrets.WORKFLOW_TOKEN }}
+
     - name: Extract Artifact
       run : |
         mkdir -p ${{ env.ARTIFACT_NAME }}-${{ env.GITREF }}
